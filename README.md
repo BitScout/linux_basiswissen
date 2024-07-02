@@ -13,12 +13,13 @@
 * Mit Tabulator kann man die aktuelle Eingabe automatisch vervollständigen lassen.
 So bekommt man z. B. Datei- und Ordnernamen vervollständigt oder auch Befehle.
 * Pfeiltaste nach oben ruft die zuletzt verwendeten Befehle auf, mit Enter können diese dann ausgeführt werden.
+  Die Historie wird üblicherweise in `~/.bash_history` gespeichert.
 * Mit Strg-C können obige Vorgänge (und auch die meisten Programme) abgebrochen werden.
 
 
-### Dateisystem
+## Dateisystem
 
-#### Im Dateisystem navigieren
+### Im Dateisystem navigieren
 
 
 `ls -lha`
@@ -26,22 +27,46 @@ So bekommt man z. B. Datei- und Ordnernamen vervollständigt oder auch Befehle.
 * `cd ..`
 * `cd /`
 
-#### Dateiberechtigungen
+### Dateiberechtigungen
 
 Berechtigung | Kürzel | Zahlenwert
 --- | --- | ---
-Lesen | r | 1
+Lesen | r | 4
 Schreiben | w | 2
-Ausführen* | x | 4
+Ausführen* | x | 1
 
 *Bei Ordnern steht das Ausführungs-Bit für die Anzeige der Ordnerinhalte.
 
 
-#### Textdateien
+## Textdateien
 
-##### less
+### less
 
-##### nano
+### nano
+
+### tail
+
+`tail -f datei.txt`
+
+Falls die Datei noch nicht existiert:
+
+`tail -f --retry datei.txt`
+
+
+## Befehle wiederholt ausführen
+
+### crontab
+
+Als der Benutzer, der den Befehl später ausführen soll:
+
+`crontab -e`
+
+
+### watch
+
+Den Freien Speicher auf allen Partitionen alle 10 Sekunden anzeigen:
+
+`watch -n 10 "df -h"`
 
 
 
